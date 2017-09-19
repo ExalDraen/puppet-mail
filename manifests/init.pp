@@ -12,6 +12,7 @@ class mail (
   $server_hostname           = $::mail::params::server_hostname,
   $server_domain             = $::mail::params::server_domain,
   $server_label              = $::mail::params::server_label,
+  $check_dns                 = $::mail::params::check_dns,
   $virtual_domains           = $::mail::params::virtual_domains,
   $virtual_addresses         = $::mail::params::virtual_addresses,
   $recipient_delimiter       = $::mail::params::recipient_delimiter,

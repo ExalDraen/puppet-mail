@@ -43,6 +43,14 @@ class mail::params {
   $server_domain   = $::domain
   $server_label    = "A ${::operatingsystem} powered mail server"
 
+  # Check the DNS entries for this host, meaning
+  # * check the there > IP address associated with the fqdn
+  # * check the host owns the IP addresses
+  # * (todo) check the reverse DNS entries match
+  # These are generally all requirements for mail to work, but it can be useful 
+  # to disable this check in NATted environments.
+  $check_dns = true
+
   # Define an array of domains to send/receive mail for. You'll want to define
   # at least one (the domain the server is on!).
   $virtual_domains = []

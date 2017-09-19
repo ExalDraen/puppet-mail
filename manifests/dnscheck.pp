@@ -13,7 +13,7 @@ class mail::dnscheck (
   # require it to generate the LetsEncrypt certs (and probably to recieve mail
   # as well) ;-)
   
-  if (!mailcheckdnsforwards($server_hostname)) {
+  if ($check_dns and !mailcheckdnsforwards($server_hostname)) {
 
     # This is a hack, basically we want to fail this module in the Puppet run,
     # but not block anything else on the server. If we used the fail() function,
